@@ -80,3 +80,7 @@ jobs:
       - name: Test 2 — named-checkzone
         run: |
           docker run --rm --pull always $IMAGE_NAME /bin/bash -c "named-checkzone adminakademia.lan /etc/bind/db.adminakademia.lan"
+
+      - name: Wylogowanie z Docker Hub
+        if: always()
+        run: docker logout
